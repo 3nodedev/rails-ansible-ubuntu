@@ -2,15 +2,10 @@
 # - name: include env vars
 #   include_vars: "{{ rbenv.env }}.yml"
 
-- name: update apt cache
-  apt: update_cache=yes
-  sudo: true
-
 - name: rbenv | install build depends
   apt: pkg={{ item }} state=latest install_recommends=no
   with_items:
     - build-essential
-    - git
     - libcurl4-openssl-dev
     - libmysqlclient-dev
     - libreadline-dev

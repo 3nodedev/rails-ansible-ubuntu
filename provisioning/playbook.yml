@@ -3,5 +3,5 @@
   vars_files:
     - vars/rbenv.yml
   roles:
+    - default
     - rbenv
-    # - ruby-nodocs

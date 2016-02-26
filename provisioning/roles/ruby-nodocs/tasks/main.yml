@@ -1,3 +1,0 @@
----
-- name: ruby no-docs
-  copy: src=./roles/ruby-nodocs/files/gemfile dest=/home/vagrant/.gemrc owner=vagrant group=vagrant
