@@ -2,6 +2,8 @@
 - hosts: all
   vars_files:
     - vars/rbenv.yml
+    - vars/postgresql.yml
   roles:
     - default
-    - rbenv
+    - zzet.rbenv
+    - ANXS.postgresql

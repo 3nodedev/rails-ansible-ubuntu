@@ -1,3 +1,4 @@
 #install zzet.rbenv for Ruby installation
 - src: zzet.rbenv
+- src: ANXS.postgresql
 

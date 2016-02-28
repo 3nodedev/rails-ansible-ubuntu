@@ -1,6 +1,5 @@
 ---
 rbenv:
-  rbenv_user: vagrant
-  rbenv_root: /home/vagrant/rbenv
+  env: system
   ruby_version: 2.3.0
-  rbenv_version: 1.0.0
+  version: v1.0.0

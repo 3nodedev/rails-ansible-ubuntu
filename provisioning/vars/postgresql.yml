@@ -1,0 +1,47 @@
+# Basic settings
+
+postgresql_version: 9.3
+postgresql_encoding: 'UTF-8'
+postgresql_locale: 'en_US.UTF-8'
+
+postgresql_admin_user: "postgres"
+postgresql_default_auth_method: "trust"
+
+postgresql_cluster_name: "main"
+postgresql_cluster_reset: false
+
+postgresql_owner: "vagrant"
+postgresql_db: "test-rails"
+postgresql_pass: "vagrant"
+
+# List of databases to be created (optional)
+
+postgresql_databases:
+  - name: "{{ postgresql_db }}"
+    owner: "{{ postgresql_owner }}" # optional; specify the owner of the database
+    hstore: yes         # flag to install the hstore extension on this database (yes/no)
+    uuid_ossp: yes      # flag to install the uuid-ossp extension on this database (yes/no)
+    citext: yes         # flag to install the citext extension on this database (yes/no)
+
+# List of database extensions to be created (optional)
+
+postgresql_database_extensions:
+  - db: "{{ postgresql_db }}"
+    extensions:
+      - hstore
+      - citext
+
+# List of users to be created (optional)
+
+postgresql_users:
+  - name: "{{ postgresql_owner }}"
+    pass: "{{ postgresql_pass }}"
+    encrypted: no       # denotes if the password is already encrypted.
+
+# List of user privileges to be applied (optional)
+
+postgresql_user_privileges:
+  - name: "{{ postgresql_owner }}" # user name
+    db: "{{ postgresql_db }}"     # database
+    priv: "ALL"                 # privilege string format: example: INSERT,UPDATE/table:SELECT/anothertable:ALL
+    role_attr_flags: "CREATEDB" # role attribute flags
