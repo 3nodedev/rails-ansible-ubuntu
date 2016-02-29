@@ -11,8 +11,8 @@ Vagrant.configure(2) do |config|
   config.vm.network :private_network, ip: '172.28.128.5', hostsupdater: 'skip'
 
   config.vm.hostname = "test-rails"
-  # config.bindfs.bind_folder "data", "/data"
   config.vm.synced_folder "data", "/data", create: true, type: "nfs"
+  config.bindfs.bind_folder "/data", "data"
 
   host = RbConfig::CONFIG['host_os']
   if host =~ /darwin/
